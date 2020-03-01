@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Quiz</title>
+
+<style>
+
+body{
+	background-image:url(bg2.jpg);
+	background-size: cover; 
+}
+
+.container{                                
+	height: 400px;
+	width: 80%px;
+	position: absolute;
+	top: 350px;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border: 1px solid #fff;
+    box-shadow:0 0 8px 3px #fff; 
+    margin: auto;
+	
+}       /*box which displays the questions*/
+
+.title{
+	padding-top: 20px;
+	text-align: center;
+	font-size: 35px;
+	text-transform: uppercase;
+	color: #08038C;
+}  /*MUSIC QUIZ title name*/
+
+.question{
+	padding: 20px;
+	font-size: 22px;
+	background: #08038C;
+	border-radius: 20px;
+	margin: 10px 0 10px 0;
+	color: #f6f6f6;
+} /*display the question */
+
+.option{
+	width: 470px;
+	display: inline-block;
+	padding: 10px 0 10px 15px;
+	vertical-align: middle;
+	background: rgba(255, 255, 255, 0.5);
+	margin: 10px 0 10px 10px;
+	color: #000000;
+	border-radius: 20px;
+} /*question box styling*/
+
+.option:hover{
+	background: #08038C;
+	color: #f6f6f6;
+} /*question box hover color when move the cursor*/
+
+.next-btn{
+	border: none;
+	outline: none;
+	background: rgb(119, 29, 2);
+	width: 100px;
+	height: 35px;
+	border-radius: 20px;
+	cursor: pointer;
+	float: right;
+	margin: 10px;
+	color:white;
+} /*next question button*/
+
+.next-btn:hover{
+	background: #08038C;
+	color: #f6f6f6;	
+} /*next question button color when move the cursor*/
+
+.result{
+	height: 80px;    
+	text-align: center;
+	font-size: 55px;
+}  /*result box after completing the quiz*/
+   /*height was 100px*/
+   /*font size  was 75px*/
+   
+
+.option input:checked .option{
+	background: #08038C;
+	color: #000;
+}  /*didnt find anything*/
+
+#home{
+	width:120px;
+	height:60px;
+	margin-left:380px;
+	margin-top:530px;
+	border: 2px solid transparent;
+	background-color:  #08038C;
+	color: white;
+	font-weight:bold;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;  
+}
+
+#background{
+	border:solid #fff;
+	width:900px;
+	height:600px;
+	margin-left:220px;
+	margin-top:20px;
+	background-color: rgb(77, 77, 77,0.5);
+}
+.timer {
+	position: absolute;
+	right:0;
+	color:#fff;
+	font-size:80px;
+	font-weight:600;
+	padding:10px;
+	padding-right:600px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+<div id="background">
+<div class="timer"></div>
+
+
+<header></header> 
+
+<div id="quizContainer" class="container">  <!--quiz Container-->
+
+<div class="title">Music Quiz</div>    <!--quiz Title-->
+<div id="question" class="question"></div>   <!--questions-->
+<label class="option"><input type="radio" name="option" value="1"><span id="opt1"></span></label>   <!--radio buttons for the questions-->
+<label class="option"><input type="radio" name="option" value="2"><span id="opt2"></span></label>
+<label class="option"><input type="radio" name="option" value="3"><span id="opt3"></span></label>
+<label class="option"><input type="radio" name="option" value="4"><span id="opt4"></span></label>
+<button id="nextButton" class="next-btn" onclick="loadNextQuestion();">Next Question</button>       <!--button to validate answer--> <!--button to move to the next question--> <!--onclick will go to the next question-->
+</div>
+
+
+
+<div id="result" class="container result" style="display:none;">   <!--by default to hide this block display:none--> <!--to show the result-->
+</div>
+
+<button id="home" style="display:none;" onclick="window.location.href = 'Quiz.html';">Home</button>
+
+<script src="question.js"></script>     <!--js for the questions-->
+<script src="quiz-script.js"></script>  
+
+<footer></footer>
+</div>
+
+</body>
+
+</html>
